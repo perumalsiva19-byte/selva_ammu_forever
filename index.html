@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Forever Selva ❤️</title>
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background: linear-gradient(to right, #ff758c, #ff7eb3);
+    color: white;
+    overflow-x: hidden;
+}
+
+.container {
+    margin-top: 100px;
+}
+
+input {
+    padding: 10px;
+    border-radius: 20px;
+    border: none;
+    text-align: center;
+}
+
+button {
+    padding: 12px 25px;
+    border-radius: 25px;
+    border: none;
+    cursor: pointer;
+    margin-top: 15px;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #ff4b5c;
+    color: white;
+}
+
+#mainContent, #babyMessage, #proposal {
+    display: none;
+    padding: 20px;
+}
+
+.heart {
+    position: fixed;
+    top: -10px;
+    font-size: 22px;
+    animation: fall linear infinite;
+}
+
+@keyframes fall {
+    to { transform: translateY(100vh); }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container" id="login">
+    <h1>🔐 Only For My Selva ❤️</h1>
+    <p>Enter our wedding date (DDMM)</p>
+    <input type="password" id="password" placeholder="0311">
+    <br>
+    <button onclick="checkPassword()">Unlock My Heart ❤️</button>
+</div>
+
+<div id="mainContent">
+    <h1>Happy Valentine’s Day My Love ❤️</h1>
+    <h2>03 November – The Day My Life Changed Forever</h2>
+
+    <p>
+        My dearest Selva,<br><br>
+        You are not just my wife…  
+        You are my best friend, my strength, and my safe place.
+        From the moment we got married on 03 November,
+        my world became complete.
+        <br><br>
+        Now as you carry our little blessing,
+        I see the most beautiful and strongest woman in the world.
+        I fall in love with you again every single day.
+        <br><br>
+        Just like “Dheema Dheema”,  
+        my love for you grows softly, deeply, endlessly.
+        <br><br>
+        — Yours forever, Siva ❤️
+    </p>
+
+    <button onclick="showBaby()">Click Here My Love 👶</button>
+</div>
+
+<div id="babyMessage">
+    <h2>👶 To My Beautiful Future Mom 👶</h2>
+    <p>
+        Watching you become a mother is the greatest blessing of my life.
+        Our baby is lucky to have you.
+        And I am the luckiest man to call you my wife.
+    </p>
+    <button onclick="showProposal()">One Last Thing 💍</button>
+</div>
+
+<div id="proposal">
+    <h1>Selva… 💍</h1>
+    <h2>Will You Continue This Beautiful Life With Me Forever?</h2>
+    <p>
+        In every lifetime, in every world,  
+        I will always choose you. ❤️
+    </p>
+</div>
+
+<script>
+function checkPassword() {
+    var pass = document.getElementById("password").value;
+    if(pass === "0311") {
+        document.getElementById("login").style.display = "none";
+        document.getElementById("mainContent").style.display = "block";
+    } else {
+        alert("Wrong password ❤️ Try again my love");
+    }
+}
+
+function showBaby() {
+    document.getElementById("babyMessage").style.display = "block";
+}
+
+function showProposal() {
+    document.getElementById("proposal").style.display = "block";
+}
+
+function createHeart() {
+    const heart = document.createElement("div");
+    heart.classList.add("heart");
+    heart.innerHTML = "❤️";
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.animationDuration = Math.random() * 3 + 2 + "s";
+    document.body.appendChild(heart);
+
+    setTimeout(() => {
+        heart.remove();
+    }, 5000);
+}
+
+setInterval(createHeart, 300);
+</script>
+
+</body>
+</html>
